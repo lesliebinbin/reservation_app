@@ -1,0 +1,25 @@
+.footer {
+  position: relative;
+  text-align: center;
+  margin-top: 6vh;
+  color: #404156;
+  img {
+    margin-left: 10px;
+    margin-bottom: -10px;
+    height: 20px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    position: relative;
+    text-align: center;
+    margin-top: 6vh;
+    color: #404156;
+    img {
+      margin-left: 10px;
+      margin-bottom: -10px;
+      height: 20px !important;
+    }
+  }
+}

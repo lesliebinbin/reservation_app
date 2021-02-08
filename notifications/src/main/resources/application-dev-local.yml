@@ -1,0 +1,21 @@
+server:
+  port: 8996
+spring:
+  application:
+    name: notifications
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://167.71.198.93:8761/eureka
+debug: true

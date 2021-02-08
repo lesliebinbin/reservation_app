@@ -1,0 +1,96 @@
+.questionContainer {
+  color: #404156;
+  margin: 4vh 2vh;
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  .questions {
+    margin: 15px;
+    span {
+      font-family: sans-serif, Tahoma, Geneva, Verdana;
+      font-size: 0.9em;
+    }
+  }
+  .nextButton {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.2em;
+    span {
+      display: flex;
+      align-items: center;
+    }
+    svg {
+      background: #7193cc;
+      border-radius: 50%;
+    }
+  }
+}
+
+.RadiosContainer {
+  color: #404156;
+  font-size: 0.9em;
+  font-family: sans-serif, Tahoma, Geneva, Verdana;
+}
+
+.submitButtom {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  button {
+    background-color: #7193cc;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .questionContainer {
+    color: #404156;
+    margin: 4vh 2vh;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    .questions {
+      margin: 10px;
+      span {
+        font-family: sans-serif, Tahoma, Geneva, Verdana;
+        font-size: 0.8em;
+      }
+    }
+    .nextButton {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 1em;
+      span {
+        display: flex;
+        align-items: center;
+      }
+      svg {
+        background: #7193cc;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .RadiosContainer {
+    color: #404156;
+    font-size: 0.7em;
+    font-family: sans-serif, Tahoma, Geneva, Verdana;
+  }
+
+  .submitButtom {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-top: 5vh;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    button {
+      background-color: #7193cc;
+    }
+  }
+}

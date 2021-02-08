@@ -1,0 +1,13 @@
+{:source-paths
+        ["src-cljs"]
+
+ :nrepl {:port 8450}
+
+ :dependencies []
+
+ :builds
+        {:npm {:target           :npm-module
+               :compiler-options {:fn-invoke-direct true}
+               :output-dir       "node_modules/mycljs"
+               :runtime          :browser
+               :entries          [front-end-jsx.core]}}}

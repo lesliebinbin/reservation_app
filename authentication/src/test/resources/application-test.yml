@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: authentication
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://167.71.198.93/sample
+    username: lambda
+    password: lambda
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+debug: true
+eureka:
+  instance:
+    non-secure-port-enabled: true
+    secure-port-enabled: true
+    non-secure-port: 8080
+    secure-port: 8443
+  client:
+    service-url:
+      defaultZone: http://167.71.198.93:8761/eureka

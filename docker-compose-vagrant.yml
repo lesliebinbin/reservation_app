@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  config-server:
+    image: openjdk:8
+    working_dir: /app
+    volumes:
+      - /vagrant/config-server/build:/app
+    command: /bin/bash -c "java -jar libs/*.jar"
+    links:
+      - service-registry
+    depends_on:
+      - service-registry
+  service-registry:
+    image: openjdk:8
+    working_dir: /app
+    volumes:
+      - /vagrant/service-registry/build:/app
+    command: /bin/bash -c "java -jar libs/*.jar"
+    ports:
+      - "8761:8761"
+  front-end:
+    image: node
+    working_dir: /app
+    volumes:
+      - /vagrant/front-end:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: /bin/bash -c "npm install --silent; npm start"
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: 'db'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'user'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'password'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'password'
+      #MYSQL_ROOT_HOST: '%'
+    volumes:
+      - my-db:/var/lib/mysql
+  # Names our volume
+volumes:
+  my-db:

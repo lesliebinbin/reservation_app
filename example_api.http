@@ -1,0 +1,253 @@
+
+###
+POST http://167.71.198.93:8082/data/api/questionnaires
+Content-Type: application/json
+
+{
+  "questions": [
+    {
+      "description": "How are you",
+      "options": [
+        {
+          "description": "always",
+          "mark": 4
+        },
+        {
+          "description": "good",
+          "mark": 3
+        },
+        {
+          "description": "not bad",
+          "mark": 2
+        }
+      ]
+    },
+    {
+      "description": "Do you feel happy",
+      "options": [
+        {
+          "description": "always",
+          "mark": 4
+        },
+        {
+          "description": "good",
+          "mark": 3
+        },
+        {
+          "description": "not bad",
+          "mark": 2
+        }
+      ]
+    },
+    {
+      "description": "How is your job",
+      "options": [
+        {
+          "description": "always",
+          "mark": 4
+        },
+        {
+          "description": "good",
+          "mark": 3
+        },
+        {
+          "description": "not bad",
+          "mark": 2
+        }
+      ]
+    },
+    {
+      "description": "How is everything",
+      "options": [
+        {
+          "description": "always",
+          "mark": 4
+        },
+        {
+          "description": "good",
+          "mark": 3
+        },
+        {
+          "description": "not bad",
+          "mark": 2
+        }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+###
+POST http://167.71.198.93:8082/data/api/questionAndAnswerRecords
+Content-Type: application/json
+
+{
+  "user": {
+    "id": 2
+  },
+  "answers": [
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    }
+  ]
+}
+
+
+
+###
+GET http://167.71.198.93:8082/data/api/questionAndAnswerRecords?username=leslie
+
+###
+DELETE http://167.71.198.93:8082/data/api/questionAndAnswerRecords/4
+
+###
+POST http://167.71.198.93:8082/data/api/questions/
+Content-Type: application/json
+
+{
+  "description": "new question",
+  "type": "D",
+  "scores": {
+    "N": 0,
+    "S": 1,
+    "O": 2,
+    "AA": 3
+  }
+}
+
+###
+POST http://167.71.198.93:8082/data/api/questionnaires
+Content-Type: application/json
+
+{
+  "description": "DASS 21",
+  "questions": [
+    {
+      "description": "I found it hard to wind down",
+      "type": "S",
+      "scores": {
+        "N": 0,
+        "S": 1,
+        "O": 2,
+        "AA": 3
+      }
+    },
+    {
+      "description": "I was aware of dryness of my mouth",
+      "type": "D",
+      "scores": {
+        "N": 0,
+        "S": 1,
+        "O": 2,
+        "AA": 3
+      }
+    },
+    {
+      "description": "I couldn't seem to experience any positive feeling at all",
+      "type": "D",
+      "scores": {
+        "N": 0,
+        "S": 1,
+        "O": 2,
+        "AA": 3
+      }
+    }
+  ]
+}
+
+###
+POST http://167.71.198.93:9881/api/appointments
+Content-Type: application/json
+
+{
+  "patient": "yueer",
+  "psychologist": "haozhi",
+  "start": "2019-09-23 01:52:09",
+  "end": "2019-09-23 01:52:09"
+}
+
+###
+DELETE http://167.71.198.93:8082/data/api/appointments/150
+
+###
+POST http://167.71.198.93:8082/data/scores
+Content-Type: application/json
+
+{
+  "username": "leslie",
+  "questionnaire": "DASS 21",
+  "choices": [
+    {
+      "1": "3"
+    },
+    {
+      "2": "1"
+    },
+    {
+      "3": "1"
+    },
+    {
+      "4": "2"
+    },
+    {
+      "5": "3"
+    }
+  ]
+}
+
+
+###
+POST http://167.71.198.93:8082/data/postAppointments
+Content-Type: application/json
+
+{
+  "patient": "leslie",
+  "psychologist": "haozhi",
+  "start": 1571523265455,
+  "end": 1571526865455
+}
+
+###
+DELETE http://167.71.198.93:8082/data/api/appointments/163
+
+###
+POST http://167.71.198.93:8082/auth/login
+Content-Type: application/json
+
+{
+  "username":"leslie",
+  "password":"woainvren1"
+}
+###
+POST http://167.71.198.93:8082/auth/logout
+
+###
+GET http://167.71.198.93:8082/auth/notexists
+
+###
+DELETE http://localhost:9881/api/questionAndAnswerRecords/30
+
+###
+GET http://167.71.198.93:8082/data/api/appointments/search/findAllByPatientUsernameAndPsychologistUsername?patient=leslie&psychologist=haozhi
+
+###
+POST http://167.71.198.93:8082/data/updateAppointment
+Content-Type: application/json
+
+{
+  "appointmentId":170,
+  "startTimeStamp":1571612700000,
+  "endTimeStamp":1571616300000
+}
+
+###
+GET http://167.71.198.93:8082/data/api/appointments/169

@@ -1,0 +1,117 @@
+.top-nav {
+  background-color: transparent;
+  margin: 8px;
+  .navbar-header {
+    display: flex;
+    justify-content: space-between;
+    .navbar-setting {
+      color: #404156;
+      margin: 3px 30px 0 0; 
+      font-size: 3em;
+      width: 5vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}
+
+.InfoButton {
+  animation: glowing 1800ms infinite;
+  color: #f0c762 !important;
+  margin-left: 8px;
+}
+
+
+.MuiSvgIcon-root {
+  font-size: 2rem !important;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 3px #f0c762; border-radius: 50%;}
+  50% {   box-shadow: 0 0 25px #f0c762; border-radius: 50%;}
+  100% { box-shadow: 0 0 3px #f0c762; border-radius: 50%;}
+}
+
+.top-nav .navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.top-nav .navbar-nav > li {
+  list-style: none;
+  line-height: 25px;
+  font-size: 1.2em;
+  margin-right: 6vw;
+  a {
+    color: #404156;
+    text-decoration: none;
+  }
+  a:hover {
+    border-bottom: 3px solid #fd7059;
+  }
+}
+
+.navbar-brand {
+  color: #fff;
+  display: flex;
+  margin: 10px;
+  text-decoration: none;
+  span {
+    padding: 10px;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top-nav {
+    background-color: transparent;
+    margin: 10px;
+    .navbar-header {
+      display: flex;
+      justify-content: space-between;
+      .navbar-setting {
+        color: #404156;
+        margin: 3px 20px 0 0; 
+        font-size: 1em;
+        width: 5vw;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+
+  .top-nav .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(64, 65, 86, 0.5);
+  }
+
+  .top-nav .navbar-nav > li {
+    list-style: none;
+    line-height: 25px;
+    font-size: 1.2em;
+    margin-right: 6vw;
+    margin-bottom: 2px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    a:hover {
+      border-bottom: 3px solid #fd7059;
+    }
+  }
+
+  .navbar-brand {
+    color: #fff;
+    display: flex;
+    margin: 5px;
+    text-decoration: none;
+    span {
+      padding: 10px;
+      font-size: 1.2em;
+    }
+  }
+}

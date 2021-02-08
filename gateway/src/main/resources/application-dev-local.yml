@@ -1,0 +1,20 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: mind-initiate-gateway
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+eureka:
+  client:
+    service-url:
+      defaultZone: http://167.71.198.93:8761/eureka
+debug: true
+

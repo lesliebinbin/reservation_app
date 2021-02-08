@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'application'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = '1.11'
+targetCompatibility = '1.11'
+
+
+ext {
+    set('oathAutoVersion', "2.1.0.RELEASE")
+    set('socialVersion', '1.1.6.RELEASE')
+}
+//configurations {
+//    implementation.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+//}
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'mysql:mysql-connector-java'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+//    implementation 'io.jsonwebtoken:jjwt:0.9.1'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    compileOnly 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+mainClassName = 'com.example.springsocial.AuthenticationApplication'
+
+this.afterEvaluate{Project project ->
+    def startBuildTime, endBuildTime
+    def buildTask = project.tasks.getByName('bootJar')
+    buildTask.doFirst {
+        startBuildTime = System.currentTimeMillis()
+    }
+    buildTask.doLast {
+        endBuildTime = System.currentTimeMillis()
+        println "the build time is:${endBuildTime-startBuildTime}"
+    }
+}

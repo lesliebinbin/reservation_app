@@ -1,0 +1,18 @@
+instance:
+  app: "jqservice"
+  hostName: "localhost"
+  ipAddr: "127.0.0.1"
+  port:
+    "$": 5000
+    "@enabled": "true"
+
+  vipAddress: "jq.test.something.com"
+  statusPageUrl: "http://localhost:5000"
+  dataCenterInfo:
+    "@class": "com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo"
+    name: "MyOwn"
+
+eureka:
+  host: "localhost"
+  port: 8761
+  servicePath: "/eureka/apps/"

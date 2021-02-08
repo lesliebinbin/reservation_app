@@ -1,0 +1,14 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://167.71.198.93/sample
+    username: lambda
+    password: lambda
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://167.71.198.93:8761/eureka
+debug: true

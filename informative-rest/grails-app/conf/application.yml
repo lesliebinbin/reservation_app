@@ -1,0 +1,116 @@
+---
+eureka:
+  client:
+    service-url:
+      defaultZone: http://167.71.198.93:8761/eureka
+debug: true
+grails:
+  profile: rest-api
+  codegen:
+    defaultPackage: informative.rest
+  gorm:
+    reactor:
+      # Whether to translate GORM events into Reactor events
+      # Disabled by default for performance reasons
+      events: false
+  mongodb:
+    url: mongodb://localhost/informative
+  resources:
+    pattern: '/**'
+info:
+  app:
+    name: '@info.app.name@'
+    version: '@info.app.version@'
+    grailsVersion: '@info.app.grailsVersion@'
+spring:
+  jmx:
+    unique-names: true
+  main:
+    banner-mode: "off"
+  groovy:
+    template:
+      check-template-location: false
+  devtools:
+    restart:
+      additional-exclude:
+        - '*.gsp'
+        - '**/*.gsp'
+        - '*.gson'
+        - '**/*.gson'
+        - 'logback.groovy'
+        - '*.properties'
+  application:
+    name: 'informative-rest'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+server:
+  port: 9999
+---
+grails:
+  mime:
+    disable:
+      accept:
+        header:
+          userAgents:
+            - Gecko
+            - WebKit
+            - Presto
+            - Trident
+    types:
+      json:
+        - application/json
+        - text/json
+      hal:
+        - application/hal+json
+        - application/hal+xml
+      xml:
+        - text/xml
+        - application/xml
+      atom: application/atom+xml
+      css: text/css
+      csv: text/csv
+      js: text/javascript
+      rss: application/rss+xml
+      text: text/plain
+      all: '*/*'
+  urlmapping:
+    cache:
+      maxsize: 1000
+  controllers:
+    defaultScope: singleton
+  converters:
+    encoding: UTF-8
+
+---
+hibernate:
+  cache:
+    queries: false
+    use_second_level_cache: false
+    use_query_cache: false
+#dataSource:
+#    driverClassName: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://167.71.198.93/informative
+#    username: lambda
+#    password: lambda
+#    dialect: org.hibernate.dialect.MySQL57Dialect
+
+#environments:
+#    development:
+#        dataSource:
+#            dbCreate: update
+#            logSql: true
+#            formatSql: true
+#    test:
+#        dataSource:
+#            dbCreate: update
+#    production:
+#        dataSource:
+#            dbCreate: none
+
+

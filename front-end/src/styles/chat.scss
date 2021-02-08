@@ -1,0 +1,16 @@
+.chat-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+@media screen and (max-width: 600px) {
+  .chat-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    .rsc {
+      width: 80vw;
+    }
+  }
+}

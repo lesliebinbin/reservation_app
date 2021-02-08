@@ -1,0 +1,17 @@
+server:
+  port: 8899
+spring:
+  application:
+    name: authentication
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 494995794423-ok8ajkjb2k6h1ifkr3sql4ah806m373o.apps.googleusercontent.com
+            clientSecret: KZT0hkoPSFmzRjMTg39806uQ
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://service-registry:8761/eureka
